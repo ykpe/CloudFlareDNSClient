@@ -1,1 +1,0 @@
-tasklist | find /i "chiRPC.exe" && taskkill /im chiRPC.exe /F

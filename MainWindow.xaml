@@ -1,0 +1,31 @@
+﻿<Window x:Class="CloudFlareDNSClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CloudFlareDNSClient"
+        mc:Ignorable="d"
+        Title="CloudFlare DNS Record Auto Updater" Height="400" Width="600">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="593*"/>
+            <ColumnDefinition Width="7*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="ZoneID" HorizontalAlignment="Left" Margin="54,33,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.446,0.112"/>
+        <TextBox x:Name="TextBox_ZoneID" HorizontalAlignment="Left" Margin="124,37,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="352"/>
+        <Label Content="APIKey" HorizontalAlignment="Left" Margin="54,77,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.446,0.112"/>
+        <TextBox x:Name="TextBox_APIKey" HorizontalAlignment="Left" Margin="124,81,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="352"/>
+        <Label Content="RecordID(IPv4)" HorizontalAlignment="Left" Margin="11,130,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.446,0.112"/>
+        <TextBox x:Name="TextBox_RecordIDv4" HorizontalAlignment="Left" Margin="124,134,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="352"/>
+        <Label Content="RecordID(IPv6)" HorizontalAlignment="Left" Margin="11,0,0,0" VerticalAlignment="Center" RenderTransformOrigin="0.446,0.112"/>
+        <TextBox x:Name="TextBox_RecordIDv6" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="352" Margin="124,0,0,0"/>
+        <Label Content="Interval" HorizontalAlignment="Left" Margin="54,231,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.446,0.112"/>
+        <TextBox x:Name="TextBox_Interval" HorizontalAlignment="Left" Margin="124,235,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="352"/>
+        <Label x:Name="Label_IPv4Status" Content="IPv4" HorizontalAlignment="Left" Margin="54,291,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.446,0.112"/>
+        <Label x:Name="Label_IPv6Status" Content="IPv6" HorizontalAlignment="Left" Margin="54,321,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.446,0.112"/>
+        <CheckBox x:Name="CheckBox_IPv6Enable" Content=""  HorizontalAlignment="Left" Margin="29,331,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.574,0.903" Checked="CheckBox_IPv6Enable_Checked"/>
+        <Button x:Name="Button_UpdateStart" Content="Start" HorizontalAlignment="Left" Margin="179,265,0,0" VerticalAlignment="Top" Click="Button_UpdateStart_Click"/>
+        <Button x:Name="Button_UpdateStop" Content="Stop" HorizontalAlignment="Left" Margin="346,265,0,0" VerticalAlignment="Top" Click="Button_UpdateStop_Click"/>
+
+    </Grid>
+</Window>
