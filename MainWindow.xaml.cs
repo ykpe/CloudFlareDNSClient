@@ -42,10 +42,10 @@ namespace CloudFlareDNSClient
             Timer_updateDNS.Enabled = true;
             Timer_updateDNS.Stop();
             Timer_updateDNS.Elapsed += OnTimedEvent_UpdateDomain;
-
+            StopTimer();
             InitTrayIcon();
             LoadRecord();
-
+            CheckAutoStart();
         }
 
 
@@ -123,7 +123,6 @@ namespace CloudFlareDNSClient
             StartTimer();
 
             SaveRecord();
-
         }
 
         private void Button_UpdateStop_Click(object sender, RoutedEventArgs e)
@@ -276,6 +275,21 @@ namespace CloudFlareDNSClient
             TextBox_Interval.Text = cfData.updateInterval;
             CheckBox_IPv6Enable.IsChecked = cfData.enableIPv6;
         }
+
+        private void CheckAutoStart()
+        {
+            if (cfData.key != null && cfData.key.Length > 0 &&
+                cfData.zoneID != null && cfData.zoneID.Length > 0 &&
+                cfData.recordid_v4 != null && cfData.recordid_v4.Length > 0 &&
+                cfData.updateInterval != null && cfData.updateInterval.Length > 0 )
+            {
+
+                UpdateDomain();
+
+                StartTimer();
+            }
+        }
+
 
         private void SaveRecord()
         {
